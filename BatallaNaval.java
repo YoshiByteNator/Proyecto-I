@@ -236,7 +236,6 @@ public class BatallaNaval {
                 }
             }
         }
-        scanner.close();
         System.out.println("\n¡JUEGO TERMINADO!");
     }
 }
