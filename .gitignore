@@ -1,0 +1,8 @@
+# Ignorar documentación de Doxygen
+html/
+latex/
+
+# Ignorar archivos personales
+.gitconfig
+.lesshst
+Links/

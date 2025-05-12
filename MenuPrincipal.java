@@ -1,5 +1,15 @@
 import java.util.Scanner;
+
+/**
+ * @class MenuPrincipal
+ * @briefM Menú principal para seleccionar entre los juegos disponibles.
+ * @details Ofrece opciones para jugar Ahorcado, Batalla Naval o salir del sistema.
+ *          Maneja la navegación entre juegos y la salida del programa.
+ */
 public class MenuPrincipal {
+      /**
+     * @brief Método principal
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean seguir = true;
@@ -28,13 +38,15 @@ public class MenuPrincipal {
             }
 
             // Preguntar si vuelve al menú o sale
-            System.out.print("\n¿Volver al menú principal? (s/n): ");
-            seguir = scanner.nextLine().trim().toLowerCase().equals("s");
-            if (!seguir) {
-                System.out.println("¡ Chao, gracias por jugar!");
+            if (seguir) {
+                System.out.print("\n¿Volver al menú principal? (si/no): ");
+                String respuesta = scanner.nextLine().trim().toLowerCase();
+                seguir = respuesta.equals("si") || respuesta.equals("s");                
+                if (!seguir) {
+                    System.out.println("¡Chao, gracias por jugar!");
+                }
             }
         }
-
         scanner.close();
     }
 }
