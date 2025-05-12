@@ -1,8 +1,16 @@
+/**
+ * @class Ahorcado
+ * @brief Implementa el juego del ahorcado para dos jugadores.
+ * @details El Jugador 1 ingresa una palabra secreta y el Jugador 2 intenta adivinarla
+ *          letra por letra, con un máximo de 6 intentos fallidos.
+ */
 import java.util.Scanner;
 
-//Clase ahorcado implementa el juego del ahorcado entre dos jugadores
-//Jugador 1 ingresa una palabra secreta y el jugador 2 intenta adivinar letra por letra
 public class Ahorcado {
+     /**
+     * @brief Punto de entrada principal del juego.
+     
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
