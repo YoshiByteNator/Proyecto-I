@@ -5,7 +5,6 @@
  *          Utiliza matrices de caracteres para representar barcos ('B'), aciertos ('X'),
  *          fallos ('!') y espacios vacíos ('-').
   */
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BatallaNaval {

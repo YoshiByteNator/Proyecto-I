@@ -14,15 +14,17 @@ public class Ahorcado {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-            System.out.println("=== Bienvenidos al Juego del Ahorcado ===");
-            System.out.print("Jugador 1, ingrese su  palabra secreta: ");
+             for (int ronda = 1; ronda <= 2; ronda++) {
+            String jugadorPregunta = (ronda == 1) ? "Jugador 1" : "Jugador 2";
+            String jugadorAdivina = (ronda == 1) ? "Jugador 2" : "Jugador 1";
+
+            System.out.println("\n=== Turno de " + jugadorPregunta + " para escribir la palabra secreta ===");
+            System.out.print(jugadorPregunta + ", ingrese su palabra secreta: ");
             String palabraSecreta = scanner.nextLine().toLowerCase(); // Convertir a minúscula para evitar problemas
 
             // Limpiar la pantalla 
-            for (int i = 0; i < 50; i++) {
-                System.out.println();
-            }
-
+            for (int i = 0; i < 50; i++) System.out.println();
+        
             // Inicializar  arreglo de progreso con guiones bajos
             char[] progreso = new char[palabraSecreta.length()];
             for (int i = 0; i < progreso.length; i++) {
@@ -43,7 +45,7 @@ public class Ahorcado {
             // SE repite mientras queden intentos y  letras por adivinar
             while (intentos > 0 && !palabraAdivinada) {
                 System.out.println("Intentos restantes: " + intentos);
-                System.out.print("Jugador 2, ingresa una letra: ");
+                System.out.print(jugadorAdivina + ", ingresa una letra: ");
                 char letraIngresada = scanner.nextLine().toLowerCase().charAt(0); // Convertir a minúscula e ingresar solo el primer carácter
 
                 boolean acierto = false;
@@ -85,9 +87,10 @@ public class Ahorcado {
 
             // Mensaje de victoria o derrota
             if (palabraAdivinada) {
-                System.out.println(" (:  Felicidades! Has adivinado la palabra: " + palabraSecreta);
+                System.out.println(" (:  Felicidades! " + jugadorAdivina +  " Has adivinado la palabra: " + palabraSecreta);
             } else {
                 System.out.println(" ):  Te  quedaste sin intentos! La palabra era: " + palabraSecreta);
             }
         }
     }
+}
